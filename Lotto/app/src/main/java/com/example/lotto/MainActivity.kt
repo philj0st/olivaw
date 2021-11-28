@@ -19,10 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         val binding: ActivityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val range = Triple(0,69,5)
-        val luckyRange = Triple(1,26,1)
-        drawings.add(Drawing(range, luckyRange))
-        drawings.add(Drawing(range, luckyRange))
+
         //      connect adapter
         val drawingAdapter = DrawingAdapter(drawings)
         binding.recyclerView.adapter = drawingAdapter
@@ -40,6 +37,11 @@ class MainActivity : AppCompatActivity() {
             drawingAdapter.notifyItemInserted(insertIndex)
 //            binding.recyclerView.adapter.notifyItemInserted(drawings.size)
             Log.d("ITM","new drawing ${newDraw.numbers.toString()} .. now ${drawings.size.toString()} big")
+        }
+
+        binding.deleteButton.setOnClickListener {
+            drawings.clear()
+            drawingAdapter.notifyDataSetChanged()
         }
 
 
