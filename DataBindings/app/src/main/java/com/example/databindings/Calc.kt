@@ -14,9 +14,9 @@ const val QUARTER = 25
 const val DIME = 10
 const val NICKEL = 5
 
-class Calc : ViewModel(){
+class Calc(init:Int) : ViewModel(){
 
-    private val _amount =  MutableLiveData(0)
+    private val _amount =  MutableLiveData(init)
     val amount: LiveData<Int> = _amount
 
     val dollars20: LiveData<Int> = Transformations.map(_amount) {

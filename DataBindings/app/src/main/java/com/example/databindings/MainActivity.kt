@@ -9,6 +9,8 @@ import android.view.View
 import androidx.databinding.DataBindingUtil
 import com.example.databindings.databinding.ActivityMainBinding
 
+const val AMOUNT_KEY = "AMOUNT_KEY"
+
 class MainActivity : AppCompatActivity(){
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +19,7 @@ class MainActivity : AppCompatActivity(){
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         // Specify the current activity as the lifecycle owner.
         binding.lifecycleOwner = this
-        binding.data = Calc()
+        binding.data = Calc(0)
 
 
         binding.button2.setOnClickListener{
@@ -55,5 +57,18 @@ class MainActivity : AppCompatActivity(){
             binding.data?.clear()
         }
 
+    }
+
+    // Save UI state changes to the savedInstanceState.
+    // This bundle will be passed to onCreate if the process is
+    // killed and restarted.
+    override fun onSaveInstanceState(savedInstanceState: Bundle) {
+        super.onSaveInstanceState(savedInstanceState);
+        binding.data?.amount?.value?.let { savedInstanceState.putInt(AMOUNT_KEY, it) }
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        binding.data = Calc(savedInstanceState.getInt(AMOUNT_KEY))
     }
 }
