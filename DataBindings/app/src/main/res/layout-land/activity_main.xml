@@ -10,6 +10,17 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
+        <TextView
+            android:id="@+id/amountText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:text="@{String.valueOf(data.amount)}"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/changeCoins"
             android:layout_width="match_parent"
@@ -18,93 +29,25 @@
             app:layout_constraintLeft_toLeftOf="@+id/amountText"
             app:layout_constraintTop_toBottomOf="@+id/amountText">
 
-            <TextView
-                android:id="@+id/quarterText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="8dp"
-                android:text="@{@string/quarter_format(data.quarters)}"/>
-            <TextView
-                android:id="@+id/dimesText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="8dp"
-                android:text="@{@string/dime_format(data.dimes)}"/>
-            <TextView
-                android:id="@+id/nickelsText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="8dp"
-                android:text="@{@string/nickel_format(data.nickels)}"/>
-            <TextView
-                android:id="@+id/penniesText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="8dp"
-                android:text="@{@string/penny_format(data.pennies)}"/>
-
         </androidx.appcompat.widget.LinearLayoutCompat>
+
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/changeBills"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            app:layout_constraintLeft_toLeftOf="@+id/changeCoins"
-            app:layout_constraintTop_toBottomOf="@+id/changeCoins">
-
-            <TextView
-                android:id="@+id/dollarText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="8dp"
-                android:text="@{@string/dollar_format(data.dollars)}"/>
-            <TextView
-                android:id="@+id/dollars5Text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="8dp"
-                android:text="@{@string/dollar5_format(data.dollars5)}"/>
-            <TextView
-                android:id="@+id/dollars10Text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="8dp"
-                android:text="@{@string/dollar10_format(data.dollars10)}"/>
-            <TextView
-                android:id="@+id/dollars20Text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="8dp"
-                android:text="@{@string/dollar20_format(data.dollars20)}"/>
+            app:layout_constraintLeft_toRightOf="@+id/changeCoins"
+            app:layout_constraintStart_toEndOf="@+id/changeCoins"
+            app:layout_constraintTop_toTopOf="@+id/changeCoins">
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-
-
-        <TextView
-            android:id="@+id/amountText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
-            android:text="@{String.valueOf(data.amount)}"
-            android:textSize="30sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <TableLayout
             android:id="@+id/numTable"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
+            android:layout_marginEnd="320dp"
             android:paddingHorizontal="16dp"
             android:stretchColumns="*"
             app:layout_constraintEnd_toEndOf="parent"
@@ -117,75 +60,79 @@
 
                 <Button
                     android:id="@+id/button1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:layout_weight="1"
                     android:text="1" />
 
                 <Button
                     android:id="@+id/button2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:layout_weight="1"
                     android:text="2" />
 
                 <Button
                     android:id="@+id/button3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:layout_weight="1"
                     android:text="3" />
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:text="4" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-                  <Button
-                    android:id="@+id/button4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="4" />
+                android:layout_height="match_parent">
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
                 <Button
                     android:id="@+id/button5"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:layout_weight="1"
                     android:text="5" />
 
                 <Button
                     android:id="@+id/button6"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:layout_weight="1"
                     android:text="6" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
 
                 <Button
                     android:id="@+id/button7"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:layout_weight="1"
                     android:text="7" />
 
                 <Button
                     android:id="@+id/button8"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:layout_weight="1"
                     android:text="8" />
 
-                <Button
-                    android:id="@+id/button9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="9" />
             </TableRow>
 
             <TableRow
@@ -193,14 +140,106 @@
                 android:layout_height="match_parent">
 
                 <Button
-                    android:id="@+id/buttonClear"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/button9"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:text="9" />
+
+                <Button
+                    android:id="@+id/button0"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:text="0" />
+
+                <Button
+                    android:id="@+id/buttonClear"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="2"
                     android:text="clear" />
+
             </TableRow>
 
         </TableLayout>
+
+        <LinearLayout
+            android:layout_width="318dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/numTable"
+            app:layout_constraintTop_toTopOf="@+id/numTable">
+
+            <TextView
+                android:id="@+id/penniesText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:text="@{@string/penny_format(data.pennies)}" />
+
+            <TextView
+                android:id="@+id/dimesText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:text="@{@string/dime_format(data.dimes)}" />
+
+            <TextView
+                android:id="@+id/quarterText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:text="@{@string/quarter_format(data.quarters)}" />
+
+            <TextView
+                android:id="@+id/nickelsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:text="@{@string/nickel_format(data.nickels)}" />
+
+            <TextView
+                android:id="@+id/dollarText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:text="@{@string/dollar_format(data.dollars)}" />
+
+            <TextView
+                android:id="@+id/dollars10Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:text="@{@string/dollar10_format(data.dollars10)}" />
+
+            <TextView
+                android:id="@+id/dollars20Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:text="@{@string/dollar20_format(data.dollars20)}" />
+
+            <TextView
+                android:id="@+id/dollars5Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:text="@{@string/dollar5_format(data.dollars5)}" />
+        </LinearLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
