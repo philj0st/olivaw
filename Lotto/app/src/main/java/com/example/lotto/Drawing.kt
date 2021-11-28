@@ -3,8 +3,9 @@ package com.example.lotto
 import kotlin.random.Random
 
 data class Drawing(val range:Triple<Int,Int,Int>, val luckyRange:Triple<Int,Int,Int>){
+    val numbers:MutableList<Int> = mutableListOf<Int>()
+
     init {
-        val numbers = mutableListOf<Int>()
         val (from, to, amount) = range
         var nextNum:Int
 
