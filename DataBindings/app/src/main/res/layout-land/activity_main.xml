@@ -4,6 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
         <variable name="data" type="com.example.databindings.Calc"/>
+        <import type="com.example.databindings.BindingConversion"/>
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -16,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
-            android:text="@{String.valueOf(data.amount)}"
+            android:text="@{BindingConversion.centToDollar(data.amount)}"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
