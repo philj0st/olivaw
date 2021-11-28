@@ -47,6 +47,13 @@ class MainActivity : AppCompatActivity(){
         binding.button9.setOnClickListener{
             binding.data?.appendDigit(9)
         }
+        binding.button0.setOnClickListener{
+            binding.data?.appendDigit(0)
+        }
+
+        binding.buttonClear.setOnClickListener{
+            binding.data?.clear()
+        }
 
     }
 }

@@ -58,5 +58,9 @@ class Calc : ViewModel(){
         _amount.value = _amount.value?.times(10)?.plus(digit)
     }
 
+    fun clear(){
+        _amount.value = 0
+    }
+
 //    dollar bills (20,10,5,1)
 }
