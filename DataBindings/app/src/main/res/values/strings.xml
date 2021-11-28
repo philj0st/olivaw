@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">DataBindings</string>
+    <string name="quarter_format">quarters: %d</string>
+    <string name="dime_format">dimes: %d</string>
+    <string name="nickel_format">nickels: %d</string>
+    <string name="penny_format">pennies: %d</string>
+    <string name="dollar_format">1$bills: %d</string>
 </resources>
