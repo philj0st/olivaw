@@ -20,7 +20,7 @@ import retrofit2.Response
  */
 class ItemFragment : Fragment() {
 
-    private var columnCount = 2
+    private var columnCount = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
