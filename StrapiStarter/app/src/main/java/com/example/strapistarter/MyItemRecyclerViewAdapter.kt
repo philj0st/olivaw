@@ -21,10 +21,10 @@ import retrofit2.Response
  * TODO: Replace the implementation with code for your data type.
  */
 class MyItemRecyclerViewAdapter(
-    private val values: List<Data>
+    private val values: List<Data>,
+    private val service: StrapiService
 ) : RecyclerView.Adapter<MyItemRecyclerViewAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-
         return ViewHolder(
             FragmentItemBinding.inflate(
                 LayoutInflater.from(parent.context),
@@ -41,7 +41,7 @@ class MyItemRecyclerViewAdapter(
         holder.priceView.text = item.attributes.price.toString()
         holder.descView.text = item.attributes.description
         // fetch the image url
-        MainActivity.RetrofitBuilder.service.getFile(item.id).enqueue(object : Callback<File> {
+        service.getFile(item.id).enqueue(object : Callback<File> {
             override fun onResponse(call: Call<File>, response: Response<File>) {
                 response.body()?.let {
                     Log.d("ITM", it.formats.thumbnail.url)

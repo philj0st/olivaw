@@ -35,7 +35,7 @@ class ItemFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_item_list, container, false)
-
+        val service = (activity as MainActivity).service
         // Set the adapter
         if (view is RecyclerView) {
             with(view) {
@@ -43,12 +43,13 @@ class ItemFragment : Fragment() {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
                 }
-                MainActivity.RetrofitBuilder.service.getProducts().enqueue(object:
+//                MainActivity.RetrofitBuilder.service.getProducts().enqueue(object:
+                service.getProducts().enqueue(object:
                     Callback<Product> {
                     override fun onResponse(call: Call<Product>, response: Response<Product>){
                         response.body()?.data?.forEach { Log.d("ITM", it.attributes.title) }
                         // set adapter
-                        adapter = MyItemRecyclerViewAdapter(response.body()?.data!!)
+                        adapter = MyItemRecyclerViewAdapter(response.body()?.data!!,service)
                     }
 
                     override fun onFailure(call: Call<Product>, t: Throwable) {
