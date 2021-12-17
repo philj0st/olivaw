@@ -12,4 +12,7 @@ interface StrapiService {
     @GET("product/{id}")
     fun getProduct(@Path("id") id: Int): Call<Product>
 
+    @GET("upload/files/{id}")
+    fun getFile(@Path("id") id: Int): Call<File>
+
 }
